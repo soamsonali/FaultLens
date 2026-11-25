@@ -1,4 +1,4 @@
-window.AUTH_API_URL = "http://localhost:7000/api/auth";
+window.AUTH_API_URL = "/api/auth";
 // ===============================
 // STUDENT REGISTRATION
 // ===============================

@@ -1,5 +1,5 @@
 
-const API_URL = "http://localhost:7000/api/issues";
+const API_URL = "/api/issues";
 
 const token = localStorage.getItem("token");
 const user = JSON.parse(localStorage.getItem("user") || "null");
