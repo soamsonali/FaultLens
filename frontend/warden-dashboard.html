@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaultLens | Warden Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="student-page">
+
+<div class="student-layout">
+
+    <aside class="student-sidebar">
+        <h2 class="student-logo">Fault<span>Lens.</span></h2>
+        <p class="sidebar-label">WORKSPACE</p>
+        <a href="#overview" class="sidebar-link active">⌂ Overview</a>
+        <a href="#complaints" class="sidebar-link">◷ Complaints</a>
+
+        <div class="sidebar-bottom">
+            <p>WARDEN PORTAL</p>
+            <button type="button" id="logoutBtn">↗ Logout</button>
+        </div>
+    </aside>
+
+    <main class="student-main">
+
+        <header class="student-topbar">
+            <div>
+                <p class="student-breadcrumb">WORKSPACE / WARDEN</p>
+                <h3>Warden Dashboard</h3>
+            </div>
+            <div class="student-profile">
+                <span>W</span>
+                <div>
+                    <strong>Warden</strong>
+                    <small>Administrator</small>
+                </div>
+            </div>
+        </header>
+
+        <section id="overview" class="student-hero">
+            <div>
+                <span class="hero-tag">HOSTEL MANAGEMENT</span>
+                <h1>Welcome,<br><span>Warden</span></h1>
+                <p>Monitor student complaints, manage requests and keep your hostel running smoothly.</p>
+            </div>
+            <div class="hero-decoration">
+                <div class="hero-circle">FL</div>
+                <span>WARDEN / 02</span>
+            </div>
+        </section>
+
+        <section class="student-stats">
+            <div class="student-stat">
+                <span>TOTAL COMPLAINTS</span>
+                <h2 id="totalCount">0</h2>
+            </div>
+            <div class="student-stat">
+                <span>PENDING</span>
+                <h2 id="pendingCount">0</h2>
+            </div>
+            <div class="student-stat">
+                <span>IN PROGRESS</span>
+                <h2 id="progressCount">0</h2>
+            </div>
+            <div class="student-stat">
+                <span>RESOLVED</span>
+                <h2 id="resolvedCount">0</h2>
+            </div>
+        </section>
+
+        <section id="complaints" class="student-panel">
+            <div class="panel-heading">
+                <div>
+                    <span class="panel-tag">HOSTEL OPERATIONS</span>
+                    <h2>All Complaints</h2>
+                    <p>Review and update student requests.</p>
+                </div>
+                <button onclick="loadComplaints()" class="student-submit">
+                    ↻ Refresh
+                </button>
+            </div>
+
+            <div style="overflow-x:auto;">
+                <table style="width:100%; border-collapse:collapse; color:#fff;">
+                    <thead>
+                        <tr>
+                            <th align="left">Complaint</th>
+                            <th align="left">Category</th>
+                            <th align="left">Room</th>
+                            <th align="left">Severity</th>
+                            <th align="left">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="complaintTable">
+                        <tr>
+                            <td colspan="5">Loading complaints...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="wardenMessage"></p>
+        </section>
+
+        <footer class="student-footer">
+            FAULTLENS © 2026 · WARDEN MANAGEMENT PORTAL
+        </footer>
+
+    </main>
+</div>
+
+<script src="auth.js"></script>
+<script src="script.js"></script>
+
+<script>
+const token = localStorage.getItem("token");
+const user = JSON.parse(localStorage.getItem("user") || "null");
+
+if (!token || !user || user.role?.toLowerCase() !== "warden") {
+    window.location.replace("login.html");
+}
+</script>
+
+</body>
+</html>

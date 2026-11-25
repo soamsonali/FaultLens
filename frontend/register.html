@@ -1,0 +1,109 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaultLens | Create Account</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-page">
+
+    <div class="auth-container">
+
+        <div class="auth-visual">
+            <div class="visual-content">
+                <span class="auth-tag">FAULTLENS / STUDENT PORTAL</span>
+
+                <h1>Better living.<br>
+                    <span>Better hostels.</span>
+                </h1>
+
+                <p>
+                    One platform to report problems, track repairs
+                    and make hostel living better.
+                </p>
+
+                <div class="visual-stats">
+                    <div>
+                        <h3>01</h3>
+                        <p>Report issues</p>
+                    </div>
+                    <div>
+                        <h3>02</h3>
+                        <p>Track progress</p>
+                    </div>
+                    <div>
+                        <h3>03</h3>
+                        <p>Get solutions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="auth-card">
+
+            <a href="login.html" class="back-link">← Back to login</a>
+
+            <div class="auth-heading">
+                <h2>Create your <span>account.</span></h2>
+                <p>Join FaultLens and make your voice heard.</p>
+            </div>
+
+            <form id="registerForm">
+
+                <label for="name">FULL NAME</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+                <label for="email">EMAIL ADDRESS</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="name@example.com"
+                    required
+                >
+
+                <label for="password">PASSWORD</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Minimum 8 characters"
+                    minlength="8"
+                    required
+                >
+
+                <button type="submit" class="submit-btn">
+                    Create Account <span>→</span>
+                </button>
+
+                <p id="registerMessage" aria-live="polite"></p>
+
+            </form>
+
+            <p class="auth-switch">
+                Already have an account?
+                <a href="login.html">Sign in</a>
+            </p>
+
+            <p class="auth-security">
+                SECURE STUDENT REGISTRATION · FAULTLENS
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="auth.js"></script>
+
+</body>
+</html>

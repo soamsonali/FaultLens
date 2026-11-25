@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaultLens | Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+
+    <div class="auth-container">
+
+        <div class="auth-brand">
+            <h1>FAULT<span>LENS</span></h1>
+            <p>HOSTEL INFRASTRUCTURE INTELLIGENCE</p>
+
+            <div class="auth-visual">
+                <div class="auth-building"></div>
+                <div class="auth-glow"></div>
+            </div>
+
+            <h2>See problems before they grow.</h2>
+            <p>Smarter hostel management starts here.</p>
+        </div>
+
+        <div class="auth-form">
+            <p class="form-tag">WELCOME BACK</p>
+            <h2>Sign in to FaultLens</h2>
+            <p>Access your hostel maintenance dashboard.</p>
+
+            <form id="loginForm">
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter your password" required>
+
+                <button type="submit" class="submit-btn">Sign In →</button>
+
+                <p id="loginMessage"></p>
+            </form>
+
+            <p class="auth-switch">
+                New to FaultLens?
+                <a href="register.html">Create an account</a>
+            </p>
+        </div>
+
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

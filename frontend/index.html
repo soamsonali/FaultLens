@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaultLens | Hostel Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">F</div>
+                <span>FaultLens</span>
+            </div>
+
+            <p class="menu-label">MAIN MENU</p>
+
+            <nav>
+                <a href="#" class="nav-item active">▦ Dashboard</a>
+                <a href="#" class="nav-item">▤ All Complaints</a>
+                <a href="#" class="nav-item">＋ Report Issue</a>
+                <a href="#" class="nav-item">◷ Maintenance</a>
+                <a href="#" class="nav-item">◈ Analytics</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="profile">
+                    <div class="avatar">A</div>
+                    <div>
+                        <strong>Admin User</strong>
+                        <small>Administrator</small>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <p class="welcome">OVERVIEW</p>
+                    <h1>Dashboard</h1>
+                </div>
+<button class="report-btn" onclick="openReportForm()">
+    + Report New Issue
+</button>
+                <div class="top-actions">
+                    <span class="hostel-tag">⌂ Main Hostel</span>
+                    <div class="top-avatar">A</div>
+                </div>
+            </header>
+
+            <section class="welcome-banner">
+            <div>
+              <p>FAULTLENS INTELLIGENCE SYSTEM</p>
+    <h2>See problems before they grow.</h2>
+    <span>Smart hostel monitoring · Predictive maintenance · Real-time insights</span>
+</div>
+</section>
+<div class="visual-scene">
+    <div class="glow-orb"></div>
+    <div class="building">
+        <div class="building-windows"></div>
+    </div>
+    <div class="signal signal-one"></div>
+    <div class="signal signal-two"></div>
+    <span class="live-tag">● SYSTEM ONLINE</span>
+</div>
+            </section>
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Total Complaints</span>
+                        <span class="stat-icon navy">▤</span>
+                    </div>
+                    <h2 id="totalCount">0</h2>
+                    <small>All reported issues</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Pending</span>
+                        <span class="stat-icon yellow">◷</span>
+                    </div>
+                    <h2 id="pendingCount">0</h2>
+                    <small>Awaiting assignment</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>In Progress</span>
+                        <span class="stat-icon blue">⚙</span>
+                    </div>
+                    <h2 id="progressCount">0</h2>
+                    <small>Currently being repaired</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Resolved</span>
+                        <span class="stat-icon green">✓</span>
+                    </div>
+                    <h2 id="resolvedCount">0</h2>
+                    <small>Completed repairs</small>
+                </div>
+
+            </section>
+
+<section class="intelligence-panel">
+    <div class="intelligence-heading">
+        <div>
+            <p>AI-POWERED MONITORING</p>
+            <h2>Infrastructure Intelligence</h2>
+            <span>Hostel condition and maintenance insights</span>
+        </div>
+        <div class="monitor-status">● LIVE MONITORING</div>
+    </div>
+
+    <div class="intelligence-content">
+        <div class="health-card">
+            <span>OVERALL BUILDING HEALTH</span>
+            <div class="health-score">86<span>/100</span></div>
+            <div class="health-bar">
+                <div></div>
+            </div>
+            <small>Good condition · Inspection recommended</small>
+        </div>
+
+        <div class="risk-card">
+            <div class="risk-icon">⚠</div>
+            <div>
+                <span>MAINTENANCE ALERT</span>
+                <h3>Attention Required</h3>
+                <p>Review pending complaints and recurring faults.</p>
+            </div>
+        </div>
+
+        <div class="building-visual">
+            <div class="building-glow"></div>
+            <div class="building-shape">
+                <div class="building-floor"></div>
+                <div class="building-floor"></div>
+                <div class="building-floor"></div>
+                <div class="building-floor"></div>
+            </div>
+            <span>BLOCK A · MONITORING</span>
+        </div>
+    </div>
+</section>
+<div class="report-modal" id="reportModal">
+    <div class="report-box">
+        <div class="form-heading">
+            <div>
+                <p>FAULTLENS · NEW REPORT</p>
+                <h2>Report an Issue</h2>
+            </div>
+            <button onclick="closeReportForm()">✕</button>
+        </div>
+
+        <form id="issueForm">
+            <label>Issue Title</label>
+            <input name="title" placeholder="e.g. Water leakage in bathroom" required>
+
+            <label>Description</label>
+            <textarea name="description" placeholder="Describe the problem..." required></textarea>
+
+            <label>Category</label>
+            <select name="category" required>
+                <option value="">Select category</option>
+                <option>Cleaning & Hygiene</option>
+                <option>Electrical</option>
+                <option>Plumbing</option>
+                <option>Civil & Infrastructure</option>
+                <option>Furniture</option>
+                <option>Internet & Wi-Fi</option>
+                <option>Safety & Security</option>
+                <option>Other</option>
+            </select>
+
+            <label>Severity</label>
+            <select name="severity" required>
+                <option value="Low">Low</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="High">High</option>
+                <option value="Critical">Critical</option>
+            </select>
+
+            <div class="form-row">
+                <div>
+                    <label>Block</label>
+                    <input name="block" placeholder="Block A" required>
+                </div>
+                <div>
+                    <label>Room Number</label>
+                    <input name="room" placeholder="101" required>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Complaint →</button>
+            <p id="formMessage"></p>
+        </form>
+    </div>
+</div>
+            <section class="complaints-section">
+                <div class="section-heading">
+                    <div>
+                        <h2>Recent Complaints</h2>
+                        <p>Latest reported hostel maintenance issues</p>
+                    </div>
+                    <button class="view-btn">View All →</button>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ISSUE</th>
+                                <th>CATEGORY</th>
+                                <th>LOCATION</th>
+                                <th>PRIORITY</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody id="complaintTable">
+                            <tr>
+                                <td colspan="5">Loading complaints...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
